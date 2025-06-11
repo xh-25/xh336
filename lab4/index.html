@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>个人信息采集表</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: "微软雅黑", Arial, sans-serif;
+            background: #f5f7fa;
+            padding: 30px;
+        }
+        form {
+            width: 800px;
+            margin: auto;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        fieldset {
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+        legend {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+            padding: 0 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td, th {
+            padding: 12px;
+            border: 1px solid #e0e0e0;
+            vertical-align: middle;
+        }
+        th {
+            background: #f8f9fa;
+            text-align: right;
+            width: 20%;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: 14px;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-color: #3498db;
+            outline: none;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+        }
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .button-group {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 25px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        button[type="submit"] {
+            background: #2c3e50;
+            color: white;
+        }
+        button[type="reset"] {
+            background: #e74c3c;
+            color: white;
+        }
+        button:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        .icon {
+            color: #3498db;
+            margin-right: 8px;
+        }
+        .photo-cell {
+            text-align: center;
+        }
+        .photo-upload {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .photo-preview {
+            width: 120px;
+            height: 160px;
+            object-fit: cover;
+            border: 3px solid #ecf0f1;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            background: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend><i class="fas fa-user icon"></i>基本信息</legend>
+            <table>
+                <tr>
+                    <th>姓名</th>
+                    <td><input type="text" name="name" placeholder="请输入姓名" maxlength="20" required></td>
+                    <th>性别</th>
+                    <td>
+                        <select name="gender" required>
+                            <option value="">请选择</option>
+                            <option value="男">男</option>
+                            <option value="女">女</option>
+                           
+                        </select>
+                    </td>
+                    <th>年龄</th>
+                    <td><input type="number" name="age" min="18" max="60" placeholder="18-60" required></td>
+                </tr>
+                <tr>
+                    <th>籍贯</th>
+                    <td><input type="text" name="hometown" placeholder="请输入籍贯" maxlength="50" required></td>
+                    <th>联系电话</th>
+                    <td colspan="3"><input type="tel" name="phone" placeholder="请输入联系电话" pattern="[0-9]{11}" required></td>
+                </tr>
+                <tr>
+                    <th>电子邮箱</th>
+                    <td colspan="3"><input type="email" name="email" placeholder="" required></td>
+                    <th>个人照片</th>
+                    <td class="photo-cell">
+                        <div class="photo-upload">
+                            <img src="./img/IMG_20240915_215055_edit_985847712763094.jpg" alt="照片预览" class="photo-preview" id="photoPreview">
+                            <input type="file" name="photo" accept="image/*" required>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>学历</th>
+                    <td>
+                        <select name="education" required>
+                            <option value="">请选择</option>
+                            <option value="高中">高中</option>
+                            <option value="专科">专科</option>
+                            <option value="本科">本科</option>
+                            <option value="硕士">硕士</option>
+                            <option value="博士">博士</option>
+                        </select>
+                    </td>
+                    <th>健康状况</th>
+                    <td>
+                        <select name="health" required>
+                            <option value="">请选择</option>
+                            <option value="优秀">优秀</option>
+                            <option value="良好">良好</option>
+                            <option value="一般">一般</option>
+                            <option value="较差">较差</option>
+                        </select>
+                    </td>
+                    <th>婚姻状况</th>
+                    <td>
+                        <select name="marital_status" required>
+                            <option value="">请选择</option>
+                            <option value="未婚">未婚</option>
+                            <option value="已婚">已婚</option>
+                           
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset>
+            <legend><i class="fas fa-briefcase icon"></i>求职信息</legend>
+            <table>
+                <tr>
+                    <th>求职意向</th>
+                    <td colspan="5">
+                        <select name="job_intention" required>
+                            <option value="">请选择</option>
+                            <option value="前端开发工程师">前端开发工程师</option>
+                            <option value="后端开发工程师">后端开发工程师</option>
+                            <option value="全栈开发工程师">全栈开发工程师</option>
+                            <option value="UI设计师">UI设计师</option>
+                            <option value="产品经理">产品经理</option>
+                            <option value="测试工程师">测试工程师</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>专业</th>
+                    <td><input type="text" name="major" placeholder="请输入专业" maxlength="50" required></td>
+                    <th>毕业院校</th>
+                    <td colspan="3"><input type="text" name="school" placeholder="请输入毕业院校" maxlength="100" required></td>
+                </tr>
+                <tr>
+                    <th>技能证书</th>
+                    <td colspan="5">
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+                            <label><input type="checkbox" name="certificates" value="英语四级"> 英语四级(CET-4)</label>
+                            <label><input type="checkbox" name="certificates" value="英语六级"> 英语六级(CET-6)</label>
+                            <label><input type="checkbox" name="certificates" value="计算机二级"> 全国计算机二级</label>
+                            <label><input type="checkbox" name="certificates" value="计算机三级"> 全国计算机三级</label>
+                            <label><input type="checkbox" name="certificates" value="软考初级"> 软考初级</label>
+                            <label><input type="checkbox" name="certificates" value="软考中级"> 软考中级</label>
+                            <label><input type="checkbox" name="certificates" value="软考高级"> 软考高级</label>
+                            <label><input type="checkbox" name="certificates" value="其他"> 其他证书</label>
+                            <label><input type="checkbox" name="certificates" value="无"> 无</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>个人特长与爱好</th>
+                    <td colspan="5">
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+                            <label><input type="checkbox" name="hobbies" value="编程"> 编程</label>
+                            <label><input type="checkbox" name="hobbies" value="运动"> 运动</label>
+                            <label><input type="checkbox" name="hobbies" value="音乐"> 音乐</label>
+                            <label><input type="checkbox" name="hobbies" value="阅读"> 阅读</label>
+                            <label><input type="checkbox" name="hobbies" value="旅游"> 旅游</label>
+                            <label><input type="checkbox" name="hobbies" value="摄影"> 摄影</label>
+                            <label><input type="checkbox" name="hobbies" value="绘画"> 绘画</label>
+                            <label><input type="checkbox" name="hobbies" value="写作"> 写作</label>
+                            <label><input type="checkbox" name="hobbies" value="其他"> 其他</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>项目经历</th>
+                    <td colspan="5"><textarea name="project_experience" placeholder="请详细描述您的项目经历" maxlength="1000" required></textarea></td>
+                </tr>
+                <tr>
+                    <th>自我评价</th>
+                    <td colspan="5"><textarea name="self_evaluation" placeholder="请描述您的个人特点和优势" maxlength="1000" required></textarea></td>
+                </tr>
+            </table>
+        </fieldset>
+
+        
+    </form>
+
+    <script>
+        // 照片预览功能
+        document.querySelector('input[name="photo"]').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    document.getElementById('photoPreview').src = event.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
