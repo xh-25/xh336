@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人简历</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .resume {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .photo-cell {
+            text-align: center;
+            width: 120px;
+        }
+        .photo {
+            width: 100px;
+            height: 120px;
+            object-fit: cover;
+            border: 1px solid #ddd;
+        }
+        .icon {
+            margin-right: 8px;
+            color: #3498db;
+        }
+        .section-title {
+            background-color: #3498db;
+            color: white;
+            padding: 8px 15px;
+            margin: 20px 0 10px 0;
+            border-radius: 5px;
+        }
+        .merged-cell {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <div class="resume">
+        <h1>个人简历</h1>
+        
+        <table>
+            <tr>
+                <th colspan="6" class="section-title">基本信息</th>
+            </tr>
+            <tr>
+                <td><i class="fas fa-user icon"></i>姓名</td>
+                <td>孙浩宇</td>
+                <td><i class="fas fa-venus-mars icon"></i>性别</td>
+                <td>男</td>
+                <td><i class="fas fa-birthday-cake icon"></i>年龄</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-home icon"></i>籍贯</td>
+                <td>山东</td>
+                <td><i class="fas fa-phone icon"></i>联系电话</td>
+                <td>10086</td>
+                <td><i class="fas fa-envelope icon"></i>电子邮箱</td>
+                <td>11@example.com</td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-graduation-cap icon"></i>学历</td>
+                <td>本科</td>
+                <td><i class="fas fa-heartbeat icon"></i>健康状况</td>
+                <td>良好</td>
+                <td><i class="fas fa-heart icon"></i>婚姻状况</td>
+                <td>未婚</td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-briefcase icon"></i>求职意向</td>
+                <td colspan="3">前端开发工程师</td>
+                <td><i class="fas fa-university icon"></i>毕业院校</td>
+                <td>鲁东大学</td>
+            </tr>
+            <tr>
+                <td rowspan="2" class="photo-cell">
+                    <img src="img/1.jpg" alt="个人照片" class="photo">
+                </td>
+                <td><i class="fas fa-book icon"></i>专业</td>
+                <td colspan="4">软件工程</td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-certificate icon"></i>技能证书</td>
+                <td colspan="4">
+                    Web前端开发高级证书 | CET-6 | 普通话二级乙等
+                </td>
+            </tr>
+        </table>
+
+        <div class="section-title"><i class="fas fa-star icon"></i>个人特长与爱好</div>
+        <table>
+            <tr>
+                <td class="merged-cell" colspan="2">
+                    <strong>特长：</strong>前端开发(HTML/CSS/JavaScript/Vue.js) | UI设计 | 数据分析<br>
+                    <strong>爱好：</strong>编程技术博客写作 | 开源项目贡献 | 羽毛球 | 摄影
+                </td>
+            </tr>
+        </table>
+
+        <div class="section-title"><i class="fas fa-project-diagram icon"></i>项目经历</div>
+        <table>
+            <tr>
+                <th width="20%">时间</th>
+                <th width="30%">项目名称</th>
+                <th>项目描述</th>
+            </tr>
+            <tr>
+                <td>2024.01-2024.02</td>
+                <td>电商后台管理系统</td>
+                <td>
+                    <strong>技术栈：</strong>Vue.js + Element UI + Axios<br>
+                    <strong>职责：</strong>负责前端页面开发，实现商品管理、订单管理模块<br>
+                    <strong>成果：</strong>系统响应速度提升40%，用户操作流程简化30%
+                </td>
+            </tr>
+            <tr>
+                <td>2025.01-2025.02</td>
+                <td>企业官网重构</td>
+                <td>
+                    <strong>技术栈：</strong>React + Ant Design<br>
+                    <strong>职责：</strong>主导前端架构设计，实现响应式布局<br>
+                    <strong>成果：</strong>移动端访问量提升65%，SEO排名显著提高
+                </td>
+            </tr>
+        </table>
+
+        <div class="section-title"><i class="fas fa-comment icon"></i>自我评价</div>
+        <table>
+            <tr>
+                <td class="merged-cell">
+                    
+                    <p>在过往项目中，我展现了出色的解决问题的能力，曾主导电商后台管理系统开发，通过优化代码结构和引入懒加载技术，使系统性能提升40%。同时我注重代码质量和可维护性，坚持编写清晰的文档和注释。</p>
+                    
+                    <p>我具备良好的团队协作精神，在敏捷开发团队中担任过技术组长角色，擅长与产品经理、UI设计师和后端工程师高效沟通。持续学习是我的工作态度，定期参与技术社区活动，保持对前沿技术的敏感度。</p>
+                    
+                    <p>性格方面，我认真负责、逻辑清晰，能够在压力下保持高效工作。希望能在贵公司发挥我的技术专长，与团队共同成长。</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
